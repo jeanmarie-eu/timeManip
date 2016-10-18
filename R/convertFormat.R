@@ -2,7 +2,7 @@
 #'
 #' Convert the format of a POSIXct date
 #' @param date format POSIXct
-#' @param format conversion into a vector "YYMMDDHH" or a matrix "YY,MM,DD,HH"
+#' @param format conversion into POSIXct, into a vector "YYMMDDHH" or a matrix "YY,MM,DD,HH"
 #' @keywords timeManip
 #' @export
 #' @examples
@@ -12,6 +12,7 @@
 convertFormat <- function(date,formatTo){
 
   res <- switch(formatTo,
+          "POSIXct"        = date,
           "YYMMDDHH"       = vectorFormat(date=date),
           "YY,MM,DD,HH"    = matrixFormat(date=date),
           (message=paste0("Invalid format expression:", formatTo,". Format conversion not yet coded"))
