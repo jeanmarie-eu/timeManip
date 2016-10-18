@@ -1,0 +1,16 @@
+Package: timeManip
+Type: Package
+Version: 0.0.0.9000
+Authors@R: person("Jean-Marie", "Lepioufle", , "jm@nexmodeling.com", c("aut","cre"))
+Title: time data manipulation
+Description: Simple functions to quickly manipulate dates
+Depends: R (>= 3.2.5)
+Imports:
+ zoo,
+ chron
+License: GPL-3
+URL: https://github.com/nexmodeling/timeManip
+BugReports: https://github.com/nexmodeling/timeManip/issues
+Encoding: UTF-8
+LazyData: false
+RoxygenNote: 5.0.1
