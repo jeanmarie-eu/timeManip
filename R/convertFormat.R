@@ -2,7 +2,7 @@
 #'
 #' Convert the format of a POSIXct date
 #' @param date format POSIXct
-#' @param format conversion into POSIXct, into a vector "YYMMDDHH" or a matrix "YY,MM,DD,HH"
+#' @param formatTo conversion into POSIXct, into a vector "YYMMDDHH" or a matrix "YY,MM,DD,HH"
 #' @keywords timeManip
 #' @export
 #' @examples

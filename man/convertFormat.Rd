@@ -9,7 +9,7 @@ convertFormat(date, formatTo)
 \arguments{
 \item{date}{format POSIXct}
 
-\item{format}{conversion into a vector "YYMMDDHH" or a matrix "YY,MM,DD,HH"}
+\item{formatTo}{conversion into POSIXct, into a vector "YYMMDDHH" or a matrix "YY,MM,DD,HH"}
 }
 \description{
 Convert the format of a POSIXct date
