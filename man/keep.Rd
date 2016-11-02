@@ -20,7 +20,9 @@ keep(fromPeriod = "20160420", toPeriod = "20160630",
 The function \code{keep()} extract the part of the date you want
 }
 \examples{
+\dontrun{
 keep()
+}
 }
 \keyword{timeManip}
 

@@ -20,9 +20,9 @@ The output is a list of a timeserie of POSIXct and the number of steps
 The fuction \code{dateTimeSerie()} builds the timeserie of date
 }
 \examples{
-res <- dateTimeSerie("hourly","20150101","20150103")
+res <- dateTimeSerie("hourly","2015010100","2015010322")
 head(res)
-res <- dateTimeSerie("hourly","19800228","19800301")
+res <- dateTimeSerie("hourly","1980022802","1980030107")
 head(res)
 }
 \keyword{timeManip}

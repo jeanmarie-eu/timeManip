@@ -8,15 +8,16 @@
 #' @keywords timeManip
 #' @export
 #' @examples
+#' \dontrun{
 #' keep()
-
+#' }
 keep <- function(fromPeriod="20160420",
 		             toPeriod="20160630",
 		             timeResolution="daily",
 								 part="month"){
 
      seqPeriod <- dateTimeSerie(timeResolution=timeResolution,fromPeriod=fromPeriod,toPeriod=toPeriod)$seqPeriod
-		 
+
      if (!inherits(seqPeriod, "dates")) seqPeriod <- chron::as.chron(seqPeriod)
 
 		 res <- switch(part,
