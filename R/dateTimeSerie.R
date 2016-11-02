@@ -16,41 +16,35 @@
 dateTimeSerie <- function(timeResolution,fromPeriod,toPeriod){
 
    if (timeResolution=="daily") {
-      # Daily
       rangeDate <- range(((strptime(fromPeriod,"%Y%m%d",tz="GMT"))),((strptime(toPeriod,"%Y%m%d",tz="GMT"))))
       dateTs <- zoo::zoo(,(as.Date(seq(from =rangeDate[1], to =rangeDate[2], by = "day"))))
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
    } else if (timeResolution=="monthly") {
-      # Monthly
       rangeDate <- range(((strptime(paste(fromYear,fromMonth,"01",sep=""),"%Y%m%d",tz="GMT"))),((strptime(paste(toYear,toMonth,"01",sep=""),"%Y%m%d",tz="GMT"))))
       dateTs <- zoo::zoo(,(as.Date(seq(from =rangeDate[1], to =rangeDate[2], by = "month"))))
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
    } else if (timeResolution=="hourly") {
-      # Hourly
-      rangeDate <- range(((strptime(paste(fromPeriod,"000000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"230000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
+      rangeDate <- range(((strptime(paste(fromPeriod,"0000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"0000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
       dateTs <- zoo::zoo(,(seq(from =rangeDate[1], to =rangeDate[2], by = "hour")))
       attributes(dateTs)$index <- base::as.POSIXct(attributes(dateTs)$index)
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
    } else if (timeResolution=="three-hourly") {
-      # Hourly
-      rangeDate <- range(((strptime(paste(fromPeriod,"000000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"230000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
+      rangeDate <- range(((strptime(paste(fromPeriod,"0000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"0000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
       dateTs <- zoo::zoo(,(seq(from =rangeDate[1], to =rangeDate[2], by = (3*3600))))
       attributes(dateTs)$index <- base::as.POSIXct(attributes(dateTs)$index)
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
    } else if (timeResolution=="minute") {
-      # Hourly
-      rangeDate <- range(((strptime(paste(fromPeriod,"000000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"230000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
+      rangeDate <- range(((strptime(paste(fromPeriod,"00",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"00",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
       dateTs <- zoo::zoo(,(seq(from =rangeDate[1], to =rangeDate[2], by = "min")))
       attributes(dateTs)$index <- base::as.POSIXct(attributes(dateTs)$index)
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
    } else if (timeResolution=="second") {
-      # Hourly
-      rangeDate <- range(((strptime(paste(fromPeriod,"000000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"230000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
+      rangeDate <- range(((strptime(fromPeriod,"%Y%m%d%H%M%S",tz="GMT"))),((strptime(toPeriod,"%Y%m%d%H%M%S",tz="GMT"))))
       dateTs <- zoo::zoo(,(seq(from =rangeDate[1], to =rangeDate[2], by = "sec")))
       attributes(dateTs)$index <- base::as.POSIXct(attributes(dateTs)$index)
       seqPeriod <- attributes(dateTs)$index
