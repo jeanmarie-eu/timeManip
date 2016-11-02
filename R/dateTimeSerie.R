@@ -17,7 +17,8 @@ dateTimeSerie <- function(timeResolution,fromPeriod,toPeriod){
 
    if (timeResolution=="daily") {
       rangeDate <- range(((strptime(paste(fromPeriod,"0000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"0000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
-      dateTs <- zoo::zoo(,(as.Date(seq(from =rangeDate[1], to =rangeDate[2], by = (24*3600)))))
+      dateTs <- zoo::zoo(,(seq(from =rangeDate[1], to =rangeDate[2], by = (24*3600))))
+      attributes(dateTs)$index <- base::as.POSIXct(attributes(dateTs)$index)
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
    } else if (timeResolution=="monthly") {
