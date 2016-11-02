@@ -1,6 +1,6 @@
 Package: timeManip
 Type: Package
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: person("Jean-Marie", "Lepioufle", , "jm@nexmodeling.com", c("aut","cre"))
 Title: time data manipulation
 Description: Simple functions to quickly manipulate dates
