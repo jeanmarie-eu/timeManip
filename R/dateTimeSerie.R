@@ -34,6 +34,13 @@ dateTimeSerie <- function(timeResolution,fromPeriod,toPeriod){
       attributes(dateTs)$index <- base::as.POSIXct(attributes(dateTs)$index)
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
+   } else if (timeResolution=="three-hourly") {
+      # Hourly
+      rangeDate <- range(((strptime(paste(fromPeriod,"000000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"230000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
+      dateTs <- zoo::zoo(,(seq(from =rangeDate[1], to =rangeDate[2], by = (3*3600))))
+      attributes(dateTs)$index <- base::as.POSIXct(attributes(dateTs)$index)
+      seqPeriod <- attributes(dateTs)$index
+      nbStep <- length(seqPeriod)
    } else if (timeResolution=="minute") {
       # Hourly
       rangeDate <- range(((strptime(paste(fromPeriod,"000000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"230000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
