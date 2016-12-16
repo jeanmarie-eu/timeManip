@@ -1,14 +1,14 @@
 #' char2POSIXct
 #'
 #' char2POSIXct
-#' @param timeResolution choice between "daily","hourly","minute","second", "monthly" ,"yearly"
-#' @param date_chr "YYYY" or "YYYYmm" or "YYYYmmdd" or "YYYYmmddHH" or "YYYYmmddHHMM" or "YYYYmmddHHMMSS"
+#' @param char "YYYY" or "YYYYmm" or "YYYYmmdd" or "YYYYmmddHH" or "YYYYmmddHHMM" or "YYYYmmddHHMMSS"
+#' @param date_chr date in character
 #' @return The output is a POSIXct value
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- dateTimeSerie("hourly","2015010100")
-#' res <- dateTimeSerie("monthly","198002")
+#' res <- char2POSIXct("YYYYmmddHH","2015010100")
+#' res <- char2POSIXct("YYYYmm","198002")
 
 
 char2POSIXct <- function(char,date_chr){
