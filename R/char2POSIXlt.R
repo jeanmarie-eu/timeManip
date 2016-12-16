@@ -22,5 +22,5 @@ char2POSIXlt <- function(char,date_chr){
     "YYYYmmddHHMMSS" = as.POSIXlt(strptime(date_chr,"%Y%m%d%H%M%S",tz="GMT")),
     (message=paste0("Invalid char:", char,"."))
    )
-   return(as.POSIXlt(res))
+   return(res)
 }

@@ -19,7 +19,19 @@ addition_char_char  <- function(char,date_chr,v,unit){
    return(res)
 }
 
+#' Addition of a POSIXlt date to a value in second
+#'
+#' Addition of a POSIXlt date to a value in second
+#'
+#' @param date POSIXlt date
+#' @param sec value in second
+#' @keywords timeManip
+#' @export
+#' @examples
+#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' addition_plt_sec(date=res,sec=487654)
+#'
 addition_plt_sec <- function(date,sec){
    res <- date+sec
-   return(res)
+   return(as.POSIXlt(res))
 }
