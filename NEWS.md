@@ -1,3 +1,11 @@
+# timeManip 0.0.3
+
+* add POSIXlt2char
+* add char2POSIXlt
+* add getP: get a part of a POSIXlt
+* add addition_char_char: addition of a date written i character to a value in an unit to be specified
+* add addition_plt_sec: addition of a POSIXlt date to a value in second
+
 # timeManip 0.0.2
 
 * dateTimeSerie can build daily timeseries with hourly precision

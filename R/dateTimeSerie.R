@@ -22,7 +22,7 @@ dateTimeSerie <- function(timeResolution,fromPeriod,toPeriod){
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
    } else if (timeResolution=="monthly") {
-      rangeDate <- range(((strptime(paste(fromYear,fromMonth,"01",sep=""),"%Y%m%d",tz="GMT"))),((strptime(paste(toYear,toMonth,"01",sep=""),"%Y%m%d",tz="GMT"))))
+      rangeDate <- range(((strptime(paste(fromPeriod,"01",sep=""),"%Y%m%d",tz="GMT"))),((strptime(paste(toPeriod,"01",sep=""),"%Y%m%d",tz="GMT"))))
       dateTs <- zoo::zoo(,(as.Date(seq(from =rangeDate[1], to =rangeDate[2], by = "month"))))
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
