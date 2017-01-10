@@ -5,7 +5,7 @@
 #' @param char "YYYY" or "YYYYmm" or "YYYYmmdd" or "YYYYmmddHH" or "YYYYmmddHHMM" or "YYYYmmddHHMMSS"
 #' @param date_chr date in character
 #' @param v value
-#' @param unit choice between daily","hourly","minute","second"
+#' @param unit choice between "daily","hourly","minute","second"
 #' @keywords timeManip
 #' @export
 #' @examples

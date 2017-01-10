@@ -13,7 +13,7 @@ addition_char_char(char, date_chr, v, unit)
 
 \item{v}{value}
 
-\item{unit}{choice between daily","hourly","minute","second"}
+\item{unit}{choice between "daily","hourly","minute","second"}
 }
 \description{
 Addition of a char date to a char value at a specific unit
