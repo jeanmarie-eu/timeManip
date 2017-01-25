@@ -26,6 +26,11 @@ dateTimeSerie <- function(timeResolution,fromPeriod,toPeriod){
       dateTs <- zoo::zoo(,(as.Date(seq(from =rangeDate[1], to =rangeDate[2], by = "month"))))
       seqPeriod <- attributes(dateTs)$index
       nbStep <- length(seqPeriod)
+   } else if (timeResolution=="yearly") {
+      rangeDate <- range(((strptime(fromPeriod,"%Y%m%d%H",tz="GMT"))),((strptime(toPeriod,"%Y%m%d",tz="GMT"))))
+      dateTs <- zoo::zoo(,(seq(from =rangeDate[1], to =rangeDate[2], by = "year")))
+      seqPeriod <- attributes(dateTs)$index
+      nbStep <- length(seqPeriod)
    } else if (timeResolution=="hourly") {
       rangeDate <- range(((strptime(paste(fromPeriod,"0000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))),((strptime(paste(toPeriod,"0000",sep=""),"%Y%m%d%H%M%S",tz="GMT"))))
       dateTs <- zoo::zoo(,(seq(from =rangeDate[1], to =rangeDate[2], by = 3600)))
