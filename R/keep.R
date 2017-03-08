@@ -1,6 +1,7 @@
 #' Keep the part of the date you want
 #'
 #' The function \code{keep()} extract the part of the date you want
+#' OBSOLETE
 #' @param fromPeriod "YYYYmmddHHMMSS"
 #' @param toPeriod "YYYYmmddHHMMSS"
 #' @param timeResolution choice between "daily","hourly","minute","second"
