@@ -3,13 +3,12 @@
 #' char2POSIXlt
 #' @param char "YYYY" or "YYYYmm" or "YYYYmmdd" or "YYYYmmddHH" or "YYYYmmddHHMM" or "YYYYmmddHHMMSS"
 #' @param date_chr date in character
-#' @return The output is a POSIXct value
+#' @return The output is a POSIXlt value
 #' @keywords timeManip
 #' @export
 #' @examples
 #' res <- char2POSIXlt("YYYYmmddHH","2015010100")
 #' res <- char2POSIXlt("YYYYmm","198002")
-
 
 char2POSIXlt <- function(char,date_chr){
 

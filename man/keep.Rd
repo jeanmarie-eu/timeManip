@@ -18,6 +18,7 @@ keep(fromPeriod = "20160420", toPeriod = "20160630",
 }
 \description{
 The function \code{keep()} extract the part of the date you want
+OBSOLETE
 }
 \examples{
 \dontrun{

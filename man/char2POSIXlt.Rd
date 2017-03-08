@@ -12,7 +12,7 @@ char2POSIXlt(char, date_chr)
 \item{date_chr}{date in character}
 }
 \value{
-The output is a POSIXct value
+The output is a POSIXlt value
 }
 \description{
 char2POSIXlt

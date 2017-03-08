@@ -1,3 +1,7 @@
+# timeManip 0.0.4
+
+* add standard
+
 # timeManip 0.0.3
 
 * add POSIXlt2char
