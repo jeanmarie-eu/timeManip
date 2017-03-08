@@ -2,7 +2,7 @@
 #'
 #' Difference in seconds between two dates
 #' @param date1 date POSIXct
-#' @param date2 date POSIXct
+#' @param date2 date POSIXlt
 #' @keywords timeManip
 #' @export
 #' @examples
