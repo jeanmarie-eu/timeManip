@@ -7,9 +7,6 @@ Description: Simple functions to quickly manipulate dates
   The package focuses on quickly manipulating dates.
   The package focuses on date variable as character and POSIXlt.
 Depends: R (>= 3.2.5)
-Imports:
- zoo,
- chron
 License: GPL-3
 URL: https://github.com/nexmodeling/timeManip
 BugReports: https://github.com/nexmodeling/timeManip/issues

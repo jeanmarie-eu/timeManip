@@ -1,3 +1,12 @@
+# timeManip 0.1
+
+* build POSIXlt from char: add standard, YYYY_chr, YYYYmm_chr, YYYYmmdd_chr, YYYYmmddHH_chr, YYYYmmddHHSS_chr
+* extract part from POSIXlt, and get char: add YYYY, YYYYmm, YYYYmmdd, YYYYmmddHH, YYYYmmddHHSS
+* extract part from POSIXlt, and get numeric: add year, month, day, hour, minute, second
+* update operation functions: addition and difference
+* wrote timeserie: in replacement of dateTimeSerie, with a cleaner code and add argument precision
+* update timeManip: cleaner code
+
 # timeManip 0.0.4
 
 * add standard
