@@ -4,15 +4,17 @@
 \alias{timeManip}
 \title{timeManip}
 \usage{
-timeManip(fromPeriod, toPeriod, timeResolution, Timeresinsec = NULL,
-  nbStep = NULL, seqPeriod = NULL)
+timeManip(fromPeriod, toPeriod, timeResolution, precision,
+  Timeresinsec = NULL, nbStep = NULL, seqPeriod = NULL)
 }
 \arguments{
 \item{fromPeriod}{dateChr "YYYYmmddHH..."}
 
 \item{toPeriod}{dateChr "YYYYmmddHH..."}
 
-\item{timeResolution}{choice between "daily","hourly","minute","second",...}
+\item{timeResolution}{"daily","hourly","minute","second",...}
+
+\item{precision}{"daily","hourly","minute","second",...}
 
 \item{Timeresinsec}{integer}
 
@@ -24,7 +26,7 @@ timeManip(fromPeriod, toPeriod, timeResolution, Timeresinsec = NULL,
 timeManip
 }
 \examples{
-timeManip(fromPeriod="2013060205",toPeriod="2013060205",timeResolution="hourly")
+timeManip(fromPeriod="2013060205",toPeriod="2013060205",timeResolution="hourly",precision="hourly")
 
 }
 \keyword{timeManip}

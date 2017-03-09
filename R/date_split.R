@@ -7,7 +7,7 @@
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' year(res)
 year <- function(date,CHAR=FALSE){
   return(getP(date,"year",CHAR=CHAR))
@@ -21,7 +21,7 @@ year <- function(date,CHAR=FALSE){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' month(res)
 month <- function(date,CHAR=FALSE){
   return(getP(date,"month",CHAR=CHAR))
@@ -35,7 +35,7 @@ month <- function(date,CHAR=FALSE){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' month(res)
 day <- function(date,CHAR=FALSE){
   return(getP(date,"day",CHAR=CHAR))
@@ -49,7 +49,7 @@ day <- function(date,CHAR=FALSE){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' hour(res)
 hour <- function(date,CHAR=FALSE){
   return(getP(date,"hour",CHAR=CHAR))
@@ -63,7 +63,7 @@ hour <- function(date,CHAR=FALSE){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' minute(res)
 minute <- function(date,CHAR=FALSE){
   return(getP(date,"minute",CHAR=CHAR))
@@ -77,7 +77,7 @@ minute <- function(date,CHAR=FALSE){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' second(res)
 second <- function(date,CHAR=FALSE){
   return(getP(date,"second",CHAR=CHAR))
@@ -91,7 +91,7 @@ second <- function(date,CHAR=FALSE){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' wday(res)
 wday <- function(date,CHAR=FALSE){
   return(getP(date,"wday",CHAR=CHAR))
@@ -106,7 +106,7 @@ wday <- function(date,CHAR=FALSE){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' yday(res)
 yday <- function(date,CHAR=FALSE){
   return(getP(date,"yday",CHAR=CHAR))
@@ -119,7 +119,7 @@ yday <- function(date,CHAR=FALSE){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' idist(res)
 idist <- function(date){
   return(getP(date,"idist"))
@@ -132,11 +132,12 @@ idist <- function(date){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' tzone(res)
 tzone <- function(date){
   return(getP(date,"tzone"))
 }
+
 
 
 #' Get the part of the POSIXlt date you want
@@ -148,7 +149,7 @@ tzone <- function(date){
 #' @keywords timeManip
 #' @export
 #' @examples
-#' res <- char2POSIXlt("YYYYmmddHH","2015010100")
+#' res <- YYYYmmddHH_chr("2015010100")
 #' getP(res,"month")
 getP <- function(date,part,CHAR=FALSE){
 
@@ -165,9 +166,15 @@ getP <- function(date,part,CHAR=FALSE){
 							"tzone" = attributes(date)$tzone,
 							(message=paste0("part:", part," not taken into account "))
 		 )
-      if ((CHAR) && is.numeric(res)) {
-        if (res<10) res <- paste0("0",as.character(res))
-      }
+     if ((CHAR) && is.numeric(res)) {
+       lgth <- length(res)
+       if (lgth) {
+          indice <- which(res<10)
+          res[which(res<10)] <- paste0("0",as.character(res[which(res<10)]))
+       } else if (lgth==1){
+          if (res<10) res <- paste0("0",as.character(res))
+       }
+     }
 
      return(res)
 }
