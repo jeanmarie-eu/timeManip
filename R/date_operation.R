@@ -48,5 +48,5 @@ addition <- function(date,sec){
 #' }
 difference  <- function(date1,date2){
    res <-base::difftime(date1, date2, units = "sec")
-   return(res)
+   return(as.numeric(res))
 }

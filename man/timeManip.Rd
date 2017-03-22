@@ -4,7 +4,7 @@
 \alias{timeManip}
 \title{timeManip}
 \usage{
-timeManip(fromPeriod, toPeriod, timeResolution, precision,
+timeManip(fromPeriod, toPeriod, timeResolution, precision = NULL,
   Timeresinsec = NULL, nbStep = NULL, seqPeriod = NULL)
 }
 \arguments{

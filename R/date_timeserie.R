@@ -16,18 +16,22 @@
 
 timeserie <- function(timeResolution,fromPeriod,toPeriod,precision=NULL){
 
-  if (is.null(precision)) precision <- timeResolution
+  if (is.null(precision) && (timeResolution!="three-hourly")) {
+    precision <- timeResolution
+  } else if(is.null(precision) && (timeResolution=="three-hourly")) {
+    precision <- "hourly"
+  }
   from_POSIXlt <- standard(precision,fromPeriod)
   to_POSIXlt   <- standard(precision,toPeriod)
 
   seqPeriod <- switch(timeResolution,
-    "yearly" = seq(from = from_POSIXlt, to = to_POSIXlt, by = "year"),
-    "month"  = seq(from = from_POSIXlt, to = to_POSIXlt, by = "month"),
-    "daily"  = seq(from = from_POSIXlt, to = to_POSIXlt, by = (24*3600)),
+    "yearly"       = seq(from = from_POSIXlt, to = to_POSIXlt, by = "year"),
+    "monthly"      = seq(from = from_POSIXlt, to = to_POSIXlt, by = "month"),
+    "daily"        = seq(from = from_POSIXlt, to = to_POSIXlt, by = (24*3600)),
     "three-hourly" = seq(from = from_POSIXlt, to = to_POSIXlt, by = (3*3600)),
-    "hourly" = seq(from = from_POSIXlt, to = to_POSIXlt, by = (3600)),
-    "minute" = seq(from = from_POSIXlt, to = to_POSIXlt, by = (60)),
-    "second" = seq(from = from_POSIXlt, to = to_POSIXlt, by = (1)),
+    "hourly"       = seq(from = from_POSIXlt, to = to_POSIXlt, by = (3600)),
+    "minute"       = seq(from = from_POSIXlt, to = to_POSIXlt, by = (60)),
+    "second"       = seq(from = from_POSIXlt, to = to_POSIXlt, by = (1)),
     (message=paste0("Invalid time resolution:", timeResolution,"."))
   )
   nbStep <- length(seqPeriod)
