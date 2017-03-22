@@ -16,7 +16,7 @@ insec  <- function(timeResolution,v=1){
          "three-hourly"           = 3*3600*v,
          "minute"                 = 60*v,
          "second"                 = 1*v,
-         (message=paste0("Time resolution:", timeResolution," not taken into account "))
+         (message=paste0("Time resolution:", timeResolution," not taken into account: months and year are not constant "))
          )
 
    return(res)

@@ -112,17 +112,17 @@ yday <- function(date,CHAR=FALSE){
   return(getP(date,"yday",CHAR=CHAR))
 }
 
-#' Get the idist
+#' Get the isdst
 #'
-#' Get the idist
+#' Get the isdst
 #' @param date POSIXlt
 #' @keywords timeManip
 #' @export
 #' @examples
 #' res <- YYYYmmddHH_chr("2015010100")
-#' idist(res)
-idist <- function(date){
-  return(getP(date,"idist"))
+#' isdst(res)
+isdst <- function(date){
+  return(getP(date,"isdst"))
 }
 
 #' Get the tzone
