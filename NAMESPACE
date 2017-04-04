@@ -2,6 +2,7 @@
 
 export(YYYY)
 export(YYYY_chr)
+export(YYYY_m)
 export(YYYYmm)
 export(YYYYmm_chr)
 export(YYYYmm_m)
