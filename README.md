@@ -1,6 +1,6 @@
 # timeManip
 
-[![Travis-CI Build Status](https://travis-ci.org/nexModeling/timeManip.svg?branch=master)](https://travis-ci.org/jeanmarielepioufle/timeManip)
+[![Travis-CI Build Status](https://travis-ci.org/jeanmarielepioufle/timeManip.svg?branch=master)](https://travis-ci.org/jeanmarielepioufle/timeManip)
 
 The R-package gathers simple functions to quickly manipulate dates as character and POSIXlt
 The package focuses on:
