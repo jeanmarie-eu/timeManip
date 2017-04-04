@@ -1,3 +1,13 @@
+
+tmp <- timeManip::timeserie("hourly","200603042300","200606042300",precision="hourly")
+nbStep <- tmp$nbStep
+seqPeriod <- tmp$seqPeriod
+dateTS <- timeManip::YYYYmmddHH_m(tmp$seqPeriod)
+
+
+
+
+
 library(timeManip)
 
 # create a POSIXlt date from a string of char
@@ -44,6 +54,16 @@ YYYYmmdd(tmp$seqPeriod)
 YYYYmmddHH(tmp$seqPeriod)
 YYYYmmddHHMM(tmp$seqPeriod)
 YYYYmmddHHMMSS(tmp$seqPeriod)
+
+
+# POSIXlt2matrix
+YYYY_m(tmp$seqPeriod)
+YYYYmm_m(tmp$seqPeriod)
+YYYYmmdd_m(tmp$seqPeriod)
+YYYYmmddHH_m(tmp$seqPeriod)
+YYYYmmddHHMM_m(tmp$seqPeriod)
+YYYYmmddHHMMSS_m(tmp$seqPeriod)
+
 
 # operation on POSIXlt
 tmp <- standard(precision="minute", "201501010224")
