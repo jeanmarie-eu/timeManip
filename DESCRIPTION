@@ -4,12 +4,14 @@ Version: 0.0.4
 Authors@R: person("Jean-Marie", "Lepioufle", , "jm@nexmodeling.com", c("aut","cre"))
 Title: time data manipulation
 Description: Simple functions to quickly manipulate dates
-  The package focuses on quickly manipulating dates.
+  The package focuses on:
+  i-quickly manipulating dates.
+  ii-minimizing memory use. Build the date timeserie when needed
   The package focuses on date variable as character and POSIXlt.
 Depends: R (>= 3.2.5)
 License: GPL-3
-URL: https://github.com/nexmodeling/timeManip
-BugReports: https://github.com/nexmodeling/timeManip/issues
+URL: https://github.com/jeanmarielepioufle/timeManip
+BugReports: https://github.com/jeanmarielepioufle/timeManip/issues
 Encoding: UTF-8
 LazyData: false
 RoxygenNote: 5.0.1
