@@ -13,7 +13,7 @@
 #'
 
 timeManip  <- function(fromPeriod,toPeriod,timeResolution,precision=NULL){
-   timeManip_object(I_fromPeriod=fromPeriod,I_toPeriod=toPeriod,I_timeResolution=timeResolution,I_precision=precision,)
+   timeManip_object(I_fromPeriod=fromPeriod,I_toPeriod=toPeriod,I_timeResolution=timeResolution,I_precision=precision)
 }
 
 timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precision){
