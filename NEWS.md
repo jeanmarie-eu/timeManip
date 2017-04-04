@@ -1,3 +1,10 @@
+# timeManip 0.9
+
+* update POSIXlt2matrix functions: YYYY_m, ..., YYYYmmddHHMMSS_m
+* delete obsolete function convert_format
+* update demos
+* make the object timeManip build a date function only when asked to save memory
+
 # timeManip 0.1
 
 * build POSIXlt from char: add standard, YYYY_chr, YYYYmm_chr, YYYYmmdd_chr, YYYYmmddHH_chr, YYYYmmddHHSS_chr
