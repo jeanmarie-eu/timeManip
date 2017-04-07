@@ -9,8 +9,9 @@
 #' @keywords timeManip
 #' @export
 #' @examples
-#' timeManip(fromPeriod="2013060205",toPeriod="2013060205",timeResolution="hourly",precision="hourly")
-#'
+#' res <- timeManip(fromPeriod="2013060205",toPeriod="2013060205",
+#'                  timeResolution="hourly",precision="hourly")
+#' res$seqPeriod()
 timeManip  <- function(fromPeriod,toPeriod,timeResolution,precision=NULL){
    timeManip_object(I_fromPeriod=fromPeriod,I_toPeriod=toPeriod,I_timeResolution=timeResolution,I_precision=precision)
 }
@@ -18,6 +19,7 @@ timeManip  <- function(fromPeriod,toPeriod,timeResolution,precision=NULL){
 timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precision){
 
   trinsec <- insec(timeResolution=I_timeResolution)
+  FUN <- getFromNamespace(x="timeserie", ns="timeManip")
 
   object <- local({
 
@@ -38,13 +40,13 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precisio
      }
 
      nbStep         = function(){
-       return(timeManip::timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$nbStep)
+       return(FUN(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$nbStep)
      }
 
      seqPeriod      = function(i=NULL){
        if (is.null(i)) {
-         return(timeManip::timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod)
-       } else return(timeManip::timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod[i])
+         return(FUN(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod)
+       } else return(FUN(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod[i])
      }
 
      environment()
