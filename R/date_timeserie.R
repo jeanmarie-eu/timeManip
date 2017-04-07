@@ -13,7 +13,6 @@
 #' head(res)
 #' res <- timeserie("daily","1980022802","1980030102","hourly")
 #' head(res)
-
 timeserie <- function(timeResolution,fromPeriod,toPeriod,precision=NULL){
 
   if (is.null(precision) && (timeResolution!="three-hourly")) {
