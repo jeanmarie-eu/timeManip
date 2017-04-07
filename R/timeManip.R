@@ -11,7 +11,6 @@
 #' @examples
 #' timeManip(fromPeriod="2013060205",toPeriod="2013060205",timeResolution="hourly",precision="hourly")
 #'
-
 timeManip  <- function(fromPeriod,toPeriod,timeResolution,precision=NULL){
    timeManip_object(I_fromPeriod=fromPeriod,I_toPeriod=toPeriod,I_timeResolution=timeResolution,I_precision=precision)
 }
