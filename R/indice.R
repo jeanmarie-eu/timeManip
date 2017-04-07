@@ -14,7 +14,7 @@
 #' str(res)
 indice_subtemporal <- function(date,d) {
   if (!identical(date,d)){
-    indice_temporal <- timeManip::contain(d$seqPeriod(),date$seqPeriod())
+    indice_temporal <- contain(d$seqPeriod(),date$seqPeriod())
     indiceT <- offsetCount(indice_temporal)
     return(list(indiceT = indiceT))
   } else {
