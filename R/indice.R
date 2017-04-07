@@ -1,6 +1,6 @@
-#' indice_subtemporal
+#' indice_subdate
 #'
-#' indice_subtemporal
+#' indice_subdate
 #' @param date timeManip object
 #' @param d sub timeManip object
 #' @keywords timeManip
@@ -10,9 +10,9 @@
 #'                timeResolution="hourly",precision="hourly")
 #' b <- timeManip(fromPeriod="2013060305",toPeriod="2013060505",
 #'                timeResolution="hourly",precision="hourly")
-#' res <- indice_subtemporal(a,b)
+#' res <- indice_subdate(a,b)
 #' str(res)
-indice_subtemporal <- function(date,d) {
+indice_subdate <- function(date,d) {
   if (!identical(date,d)){
     indice_temporal <- contain(d$seqPeriod(),date$seqPeriod())
     indiceT <- offsetCount(indice_temporal)
