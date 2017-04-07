@@ -17,8 +17,9 @@ extract
 \examples{
 a <- timeManip(fromPeriod="2013060205",toPeriod="2013062805",
                timeResolution="hourly",precision="hourly")
-res <- extract(a,c(1,5,8))
-str(res)
+res <- extract(a,indice=list(offset=3,count=5))
+res$fromPeriod()
+res$toPeriod()
 }
 \keyword{timeManip}
 
