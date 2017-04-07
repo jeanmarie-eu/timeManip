@@ -19,8 +19,9 @@ timeManip(fromPeriod, toPeriod, timeResolution, precision = NULL)
 timeManip
 }
 \examples{
-timeManip(fromPeriod="2013060205",toPeriod="2013060205",timeResolution="hourly",precision="hourly")
-
+res <- timeManip(fromPeriod="2013060205",toPeriod="2013060205",
+                 timeResolution="hourly",precision="hourly")
+res$seqPeriod()
 }
 \keyword{timeManip}
 
