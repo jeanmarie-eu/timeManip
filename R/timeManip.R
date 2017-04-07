@@ -38,13 +38,13 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precisio
      }
 
      nbStep         = function(){
-       return(timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$nbStep)
+       return(timeManip::timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$nbStep)
      }
 
      seqPeriod      = function(i=NULL){
        if (is.null(i)) {
-         return(timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod)
-       } else return(timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod[i])
+         return(timeManip::timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod)
+       } else return(timeManip::timeserie(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod[i])
      }
 
      environment()
