@@ -20,6 +20,9 @@ timeManip  <- function(fromPeriod,toPeriod,timeResolution,precision=NULL,tzone="
 timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precision,I_tzone){
 
   trinsec <- insec(timeResolution=I_timeResolution)
+  if (is.null(I_precision)) {
+    I_precision <- I_timeResolution
+  }
   FUN <- getFromNamespace(x="timeserie", ns="timeManip")
 
   object <- local({
@@ -34,6 +37,10 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precisio
 
      timeResolution = function(){
        return(I_timeResolution)
+     }
+
+     precision = function(){
+       return(I_precision)
      }
 
      Timeresinsec   = function(){
