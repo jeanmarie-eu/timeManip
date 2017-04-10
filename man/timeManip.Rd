@@ -4,7 +4,8 @@
 \alias{timeManip}
 \title{timeManip}
 \usage{
-timeManip(fromPeriod, toPeriod, timeResolution, precision = NULL)
+timeManip(fromPeriod, toPeriod, timeResolution, precision = NULL,
+  tzone = "GMT")
 }
 \arguments{
 \item{fromPeriod}{dateChr "YYYYmmddHH..."}
@@ -14,6 +15,8 @@ timeManip(fromPeriod, toPeriod, timeResolution, precision = NULL)
 \item{timeResolution}{"daily","hourly","minute","second",...}
 
 \item{precision}{"daily","hourly","minute","second",...}
+
+\item{tzone}{time zone}
 }
 \description{
 timeManip
