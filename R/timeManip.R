@@ -6,17 +6,18 @@
 #' @param toPeriod dateChr "YYYYmmddHH..."
 #' @param timeResolution "daily","hourly","minute","second",...
 #' @param precision "daily","hourly","minute","second",...
+#' @param tzone time zone
 #' @keywords timeManip
 #' @export
 #' @examples
 #' res <- timeManip(fromPeriod="2013060205",toPeriod="2013060205",
 #'                  timeResolution="hourly",precision="hourly")
 #' res$seqPeriod()
-timeManip  <- function(fromPeriod,toPeriod,timeResolution,precision=NULL){
-   timeManip_object(I_fromPeriod=fromPeriod,I_toPeriod=toPeriod,I_timeResolution=timeResolution,I_precision=precision)
+timeManip  <- function(fromPeriod,toPeriod,timeResolution,precision=NULL,tzone="GMT"){
+   timeManip_object(I_fromPeriod=fromPeriod,I_toPeriod=toPeriod,I_timeResolution=timeResolution,I_precision=precision,I_tzone=tzone)
 }
 
-timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precision){
+timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precision,I_tzone){
 
   trinsec <- insec(timeResolution=I_timeResolution)
   FUN <- getFromNamespace(x="timeserie", ns="timeManip")
@@ -37,6 +38,10 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precisio
 
      Timeresinsec   = function(){
        return(trinsec)
+     }
+
+     tzone         = function(){
+       return(I_tzone)
      }
 
      nbStep         = function(){
