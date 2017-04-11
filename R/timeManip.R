@@ -27,39 +27,50 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precisio
 
   object <- local({
 
-     fromPeriod     = function(){
+     fromPeriod <- function(){
        return(I_fromPeriod)
      }
 
-     toPeriod       = function(){
+     toPeriod <- function(){
        return(I_toPeriod)
      }
 
-     timeResolution = function(){
+     timeResolution <- function(){
        return(I_timeResolution)
      }
 
-     precision = function(){
+     precision <- function(){
        return(I_precision)
      }
 
-     Timeresinsec   = function(){
+     Timeresinsec <- function(){
        return(trinsec)
      }
 
-     tzone         = function(){
+     tzone <- function(){
        return(I_tzone)
      }
 
-     nbStep         = function(){
+     nbStep <- function(){
        return(FUN(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$nbStep)
      }
 
-     seqPeriod      = function(i=NULL){
+     seqPeriod <- function(i=NULL){
        if (is.null(i)) {
          return(FUN(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod)
        } else return(FUN(I_timeResolution,I_fromPeriod,I_toPeriod,I_precision)$seqPeriod[i])
      }
+
+     summary <- function(){
+       res <- list(fromPeriod = I_fromPeriod,
+                   toPeriod   = I_toPeriod,
+                   timeResolution = I_timeResolution,
+                   precision =    I_precision,
+                   timeresinsec = trinsec,
+                   tzone =  I_tzone)
+      return(str(res))
+     }
+
 
      environment()
    })
