@@ -1,4 +1,4 @@
 #' @export
 print.timeManip <- function(x,...){
-   x$summary()  
+   str(x$summary())  
 }
