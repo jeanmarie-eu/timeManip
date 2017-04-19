@@ -68,7 +68,7 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_precisio
                    precision =    I_precision,
                    timeresinsec = trinsec,
                    tzone =  I_tzone)
-      return(str(res))
+      return(res)
      }
 
 
