@@ -4,12 +4,12 @@
 \alias{contain}
 \title{contain}
 \usage{
-contain(a, b)
+contain(ts, ts_sub)
 }
 \arguments{
-\item{a}{POSIXlt timeserie}
+\item{ts}{POSIXlt timeserie}
 
-\item{b}{POSIXlt timeserie}
+\item{ts_sub}{POSIXlt sub timeserie}
 }
 \description{
 contain
