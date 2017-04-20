@@ -1,13 +1,3 @@
-
-tmp <- timeManip::timeserie("hourly","200603042300","200606042300",precision="hourly")
-nbStep <- tmp$nbStep
-seqPeriod <- tmp$seqPeriod
-dateTS <- timeManip::YYYYmmddHH_m(tmp$seqPeriod)
-
-
-
-
-
 library(timeManip)
 
 # create a POSIXlt date from a string of char
@@ -29,7 +19,9 @@ standard(precision="second", "20150101022419")
 # create a POSIXlt timeserie
 tmp <- timeserie(timeResolution="hourly",fromPeriod="2015010102",toPeriod="2015010110")
 tmp <- timeserie("three-hourly","2015010102","2015010110")
+tmp <- timeserie("hourly",v=3,"2015010102","2015010110")
 tmp <- timeserie("daily","2015010102","2015011210")
+tmp <- timeserie("daily",v=2,"2015010102","2015011210")
 tmp <- timeserie("monthly","2015010102","2015011210")
 tmp <- timeserie("yearly","2015010102","2019011210")
 tmp <- timeserie(timeResolution="monthly",fromPeriod="2015010102",toPeriod="2015070110",precision="hourly")
@@ -68,7 +60,8 @@ YYYYmmddHHMMSS_m(tmp$seqPeriod)
 # operation on POSIXlt
 tmp <- standard(precision="minute", "201501010224")
 addition_nonsec(date=tmp,"hourly",v=10)
-addition_nonsec(date=tmp,"monthly",v=-10)
+addition_nonsec(date=tmp,"daily",v=-10)
+addition_nonsec(date=tmp,"monthly",v=-10) # do not work yet
 
 # difference between 2 POSIXlt in second
 tmp <- standard(precision="minute", "201501010224")
@@ -76,9 +69,14 @@ tmp2 <- standard(precision="second", "20150101022435")
 difference(tmp,tmp2)
 
 # contain between toe POSIXlt
-a <- timeserie(timeResolution="daily",fromPeriod="2017010106",toPeriod="2017011006")$seqPeriod
-b <- timeserie(timeResolution="daily",fromPeriod="2017010101",toPeriod="2017013106")$seqPeriod
-contain(a,b)
+ts <- timeserie(timeResolution="daily",fromPeriod="2017010101",toPeriod="2017013106")$seqPeriod
+ts_sub <- timeserie(timeResolution="daily",fromPeriod="2017010106",toPeriod="2017011006")$seqPeriod
+contain(ts=ts,ts_sub=ts_sub)
+
+a <- timeManip(fromPeriod="2013060205",toPeriod="2013060605",timeResolution="hourly",precision="hourly")
+b <- timeManip(fromPeriod="2013060305",toPeriod="2013060505",timeResolution="hourly",precision="hourly")
+res <- indice_subdate(date=a,d=b)
+str(res)
 
 # object timeManip
 test1 <- timeManip(fromPeriod="2000090106",toPeriod="2014123106",timeResolution="daily")
@@ -88,10 +86,3 @@ test1$timeResolution()
 test1$Timeresinsec()
 test1$nbStep()
 test1$seqPeriod()
-
-
-
-
-tmp <-timeManip::timeManip("2016122106","2016122506","hourly","hourly")
-tmp$timeResolution()
-tmp$seqPeriod()
