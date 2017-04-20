@@ -6,16 +6,15 @@
 #' @keywords timeManip
 #' @export
 #' @examples
-#' a <- timeManip(fromPeriod="2013060205",toPeriod="2013060605",
-#'                timeResolution="hourly",precision="hourly")
-#' b <- timeManip(fromPeriod="2013060305",toPeriod="2013060505",
-#'                timeResolution="hourly",precision="hourly")
-#' res <- indice_subdate(a,b)
-#' str(res)
+#' \dontrun{
+#' indice_subdate()
+#' }
 indice_subdate <- function(date,d) {
   if (!identical(date,d)){
-    indice_temporal <- contain(d$seqPeriod(),date$seqPeriod())
-    indiceT <- offsetCount(indice_temporal)
+    indice_temporal <- contain(date$seqPeriod(),d$seqPeriod())
+    if (!is.null(indice_temporal)) {
+      indiceT <- offsetCount(indice_temporal)
+    } else indiceT <- NULL
     return(list(indiceT = indiceT))
   } else {
     return(list(indiceT = list(offset=1,count=date$nbStep())))

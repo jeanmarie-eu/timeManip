@@ -15,12 +15,9 @@ indice_subdate(date, d)
 indice_subdate
 }
 \examples{
-a <- timeManip(fromPeriod="2013060205",toPeriod="2013060605",
-               timeResolution="hourly",precision="hourly")
-b <- timeManip(fromPeriod="2013060305",toPeriod="2013060505",
-               timeResolution="hourly",precision="hourly")
-res <- indice_subdate(a,b)
-str(res)
+\dontrun{
+indice_subdate()
+}
 }
 \keyword{timeManip}
 
