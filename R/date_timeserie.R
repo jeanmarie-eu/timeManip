@@ -34,7 +34,7 @@ timeserie <- function(timeResolution,fromPeriod,toPeriod,precision=NULL,v=1){
     "hourly"       = seq(from = from_POSIXlt, to = to_POSIXlt, by = (v*3600)),
     "minute"       = seq(from = from_POSIXlt, to = to_POSIXlt, by = (v*60)),
     "second"       = seq(from = from_POSIXlt, to = to_POSIXlt, by = (v*1)),
-    (message=paste0("Invalid time resolution:", timeResolution,"."))
+    (stop(paste0("Invalid time resolution:", timeResolution,".")))
   )
   nbStep <- length(seqPeriod)
 
