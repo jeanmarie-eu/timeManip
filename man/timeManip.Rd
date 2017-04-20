@@ -4,7 +4,7 @@
 \alias{timeManip}
 \title{timeManip}
 \usage{
-timeManip(fromPeriod, toPeriod, timeResolution, precision = NULL,
+timeManip(fromPeriod, toPeriod, timeResolution, v = 1, precision = NULL,
   tzone = "GMT")
 }
 \arguments{
@@ -13,6 +13,8 @@ timeManip(fromPeriod, toPeriod, timeResolution, precision = NULL,
 \item{toPeriod}{dateChr "YYYYmmddHH..."}
 
 \item{timeResolution}{"daily","hourly","minute","second",...}
+
+\item{v}{multiplicative coefficient to the timeResolution}
 
 \item{precision}{"daily","hourly","minute","second",...}
 
@@ -23,7 +25,7 @@ timeManip
 }
 \examples{
 res <- timeManip(fromPeriod="2013060205",toPeriod="2013060205",
-                 timeResolution="hourly",precision="hourly")
+                 v=1,timeResolution="hourly",precision="hourly")
 res$seqPeriod()
 }
 \keyword{timeManip}

@@ -4,7 +4,7 @@
 \alias{timeserie}
 \title{Make a timeserie of dates}
 \usage{
-timeserie(timeResolution, fromPeriod, toPeriod, precision = NULL)
+timeserie(timeResolution, fromPeriod, toPeriod, precision = NULL, v = 1)
 }
 \arguments{
 \item{timeResolution}{"daily","hourly","minute","second"}
@@ -14,6 +14,8 @@ timeserie(timeResolution, fromPeriod, toPeriod, precision = NULL)
 \item{toPeriod}{date char "YYYYmmdd..."}
 
 \item{precision}{"daily","hourly","minute","second",...}
+
+\item{v}{multiplicative coefficient to the timeResolution}
 }
 \value{
 The output is a list of a timeserie of POSIXct and the number of steps
@@ -25,6 +27,8 @@ The fuction \code{dateTimeSerie()} builds the timeserie of date
 res <- timeserie(timeResolution = "hourly",fromPeriod="2015010100",toPeriod="2015010322")
 head(res)
 res <- timeserie("daily","1980022802","1980030102","hourly")
+head(res)
+res <- timeserie("hourly",v=2,"1980022802","1980030102","hourly")
 head(res)
 }
 \keyword{timeManip}
