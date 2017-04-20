@@ -19,7 +19,7 @@ standard <- function(precision,date_chr){
       "hourly"       = YYYYmmddHH_chr(date_chr=date_chr),
       "minute"       = YYYYmmddHHMM_chr(date_chr=date_chr),
       "second"       = YYYYmmddHHMMSS_chr(date_chr=date_chr),
-      (message=paste0("Invalid time resolution:", precision,".")))
+      (stop(paste0("Invalid precision:", precision,"."))))
 
   return(date)
 }
