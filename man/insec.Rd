@@ -4,18 +4,21 @@
 \alias{insec}
 \title{In second}
 \usage{
-insec(timeResolution, v = 1)
+insec(timeResolution, v = 1, INV = FALSE)
 }
 \arguments{
 \item{timeResolution}{choice between "daily","hourly","minute","second"}
 
 \item{v}{value}
+
+\item{INV}{boolean if into non-second}
 }
 \description{
 The function \code{insec()} gives the values in second
 }
 \examples{
 res <- insec(timeResolution="hourly",v=4)
+res <- insec(timeResolution="hourly",v=4,INV=TRUE)
 }
 \keyword{timeManip}
 
