@@ -42,6 +42,10 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_v,I_prec
      timeResolution <- function(){
        return(I_timeResolution)
      }
+     
+     v <- function(){
+       return(I_v)
+     }
 
      precision <- function(){
        return(p_precision)
