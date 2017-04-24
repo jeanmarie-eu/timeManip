@@ -20,8 +20,10 @@ timeserie <- function(timeResolution,fromPeriod,toPeriod,precision=NULL,v=1){
 
   if (is.null(precision) && (timeResolution!="three-hourly")) {
     precision <- timeResolution
+    v <- 3
   } else if(is.null(precision) && (timeResolution=="three-hourly")) {
     precision <- "hourly"
+    v <- 3
   }
   from_POSIXlt <- standard(precision,fromPeriod)
   to_POSIXlt   <- standard(precision,toPeriod)
