@@ -22,18 +22,21 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_v,I_prec
 
   trinsec <- insec(timeResolution=I_timeResolution)
   if (is.null(I_precision)) {
-    I_precision <- I_timeResolution
-  }
+    p_precision <- I_timeResolution
+  } else p_precision <- I_precision
+  p_fromPeriod <- timeManip::YYYYmmddHHMMSS(standard(precision=p_precision, I_fromPeriod))
+  p_toPeriod <- timeManip::YYYYmmddHHMMSS(standard(precision=p_precision, I_toPeriod))
+
   FUN <- getFromNamespace(x="timeserie", ns="timeManip")
 
   object <- local({
 
      fromPeriod <- function(){
-       return(I_fromPeriod)
+       return(p_fromPeriod)
      }
 
      toPeriod <- function(){
-       return(I_toPeriod)
+       return(p_toPeriod)
      }
 
      timeResolution <- function(){
@@ -41,7 +44,7 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_v,I_prec
      }
 
      precision <- function(){
-       return(I_precision)
+       return(p_precision)
      }
 
      Timeresinsec <- function(){
@@ -53,21 +56,21 @@ timeManip_object <- function(I_fromPeriod,I_toPeriod,I_timeResolution,I_v,I_prec
      }
 
      nbStep <- function(){
-       return(FUN(timeResolution=I_timeResolution,v=I_v,fromPeriod=I_fromPeriod,toPeriod=I_toPeriod,precision=I_precision)$nbStep)
+       return(FUN(timeResolution=I_timeResolution,v=I_v,fromPeriod=p_fromPeriod,toPeriod=p_toPeriod,precision=p_precision)$nbStep)
      }
 
      seqPeriod <- function(i=NULL){
        if (is.null(i)) {
-         return(FUN(timeResolution=I_timeResolution,v=I_v,fromPeriod=I_fromPeriod,toPeriod=I_toPeriod,precision=I_precision)$seqPeriod)
-       } else return(FUN(timeResolution=I_timeResolution,v=I_v,fromPeriod=I_fromPeriod,toPeriod=I_toPeriod,precision=I_precision)$seqPeriod[i])
+         return(FUN(timeResolution=I_timeResolution,v=I_v,fromPeriod=p_fromPeriod,toPeriod=p_toPeriod,precision=p_precision)$seqPeriod)
+       } else return(FUN(timeResolution=I_timeResolution,v=I_v,fromPeriod=p_fromPeriod,toPeriod=p_toPeriod,precision=p_precision)$seqPeriod[i])
      }
 
      summary <- function(){
-       res <- list(fromPeriod = I_fromPeriod,
-                   toPeriod   = I_toPeriod,
+       res <- list(fromPeriod = p_fromPeriod,
+                   toPeriod   = p_toPeriod,
                    timeResolution = I_timeResolution,
                    v = I_v,
-                   precision =    I_precision,
+                   precision =    p_precision,
                    timeresinsec = trinsec,
                    tzone =  I_tzone)
       return(res)
