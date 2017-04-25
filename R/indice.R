@@ -11,13 +11,23 @@
 #' }
 indice_subdate <- function(date,d) {
   if (!identical(date,d)){
-    indice_temporal <- contain(date$seqPeriod(),d$seqPeriod())
-    if (!is.null(indice_temporal)) {
-      indiceT <- offsetCount(indice_temporal)
-    } else indiceT <- NULL
-    return(list(indiceT = indiceT))
+    tmp <- contain(date$seqPeriod(),d$seqPeriod())
+    indice_d <- tmp$indice_sub
+    indice_date <- tmp$indice_main
+
+    if (!is.null(indice_d)) {
+      indiceT_d <- offsetCount(indice_d)
+    } else indiceT_d <- NULL
+
+    if (!is.null(indice_date)) {
+      indiceT_date <- offsetCount(indice_date)
+    } else indiceT_date <- NULL
+
+    return(list(indiceT_d = indiceT_d,
+                indiceT_date = indiceT_date))
   } else {
-    return(list(indiceT = list(offset=1,count=date$nbStep())))
+    return(list(indiceT_d = list(offset=1,count=date$nbStep()),
+                indiceT_date = list(offset=1,count=date$nbStep()) ))
   }
 }
 
