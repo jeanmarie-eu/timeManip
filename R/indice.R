@@ -23,11 +23,11 @@ indice_subdate <- function(date,d) {
       indiceT_date <- offsetCount(indice_date)
     } else indiceT_date <- NULL
 
-    return(list(indiceT_sub = list(indiceT=indiceT_d),
-                indiceT_main = list(indiceT = indiceT_date)))
+    return(list(indice_sub = list(indiceT=indiceT_d),
+                indice_main = list(indiceT = indiceT_date)))
   } else {
-    return(list(indiceT_sub  = list( indiceT = list(offset=1,count=date$nbStep()) ),
-                indiceT_main = list( indiceT = list(offset=1,count=date$nbStep()) )))
+    return(list(indice_sub  = list( indiceT = list(offset=1,count=date$nbStep()) ),
+                indice_main = list( indiceT = list(offset=1,count=date$nbStep()) )))
   }
 }
 
