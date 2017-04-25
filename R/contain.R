@@ -11,11 +11,30 @@
 #' contain()
 #' }
 contain  <- function(ts,ts_sub){
-  i1 <- i2 <- NULL
-  i1 <- which(ts_sub>=ts[1])
-  i2 <- which(ts_sub<=ts[length(ts)])
-  if (!is.null(i1) && !is.null(i2)) {
-     indice <- seq(i1[1],i2[length(i2)])
-  } else indice <- NULL
-  return(indice)
+
+  indice_sub  <- indice_sub(ts=ts,ts_sub=ts_sub)
+  indice_main <- indice_main(ts=ts,ts_sub=ts_sub,indice_sub=indice_sub)
+  return(list(indice_sub=indice_sub,indice_main=indice_main))
+}
+
+indice_sub <- function(ts,ts_sub){
+  indice_sub <- i1_sub <- i2_sub <- NULL
+  i1_sub <- which(ts_sub>=ts[1])
+  i2_sub <- which(ts_sub<=ts[length(ts)])
+  if (!is.null(i1_sub) && !is.null(i2_sub)) {
+     indice_sub <- seq(i1_sub[1],i2_sub[length(i2_sub)])
+  }
+  return(indice_sub)
+}
+
+indice_main <- function(ts,ts_sub,indice_sub=NULL){
+  indice_main <- i1_main <- i2_main <- NULL
+  if (!is.null(indice_sub)) {
+    i1_main <- which(ts == ts_sub[indice_sub[1]])
+    i2_main <- which(ts == ts_sub[indice_sub[length(indice_sub)]])
+    if (length(i1_main) && length(i2_main)) {
+       indice_main <- seq(i1_main[1],i2_main[length(i2_main)])
+    }
+  }
+  return(indice_main)
 }

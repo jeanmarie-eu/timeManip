@@ -69,14 +69,25 @@ tmp2 <- standard(precision="second", "20150101022435")
 difference(tmp,tmp2)
 
 # contain between toe POSIXlt
-ts <- timeserie(timeResolution="daily",fromPeriod="2017010101",toPeriod="2017013106")$seqPeriod
-ts_sub <- timeserie(timeResolution="daily",fromPeriod="2017010106",toPeriod="2017011006")$seqPeriod
+ts <- timeserie(timeResolution="daily",fromPeriod="20170101",toPeriod="20170131")$seqPeriod
+ts_sub <- timeserie(timeResolution="daily",fromPeriod="20170105",toPeriod="20170110")$seqPeriod
+contain(ts=ts,ts_sub=ts_sub)
+
+# contain between toe POSIXlt
+ts <- timeserie(timeResolution="daily",fromPeriod="2017010106",toPeriod="2017013106")$seqPeriod
+ts_sub <- timeserie(timeResolution="daily",fromPeriod="2017010507",toPeriod="2017011007")$seqPeriod
 contain(ts=ts,ts_sub=ts_sub)
 
 a <- timeManip(fromPeriod="2013060205",toPeriod="2013060605",timeResolution="hourly",precision="hourly")
 b <- timeManip(fromPeriod="2013060305",toPeriod="2013060505",timeResolution="hourly",precision="hourly")
 res <- indice_subdate(date=a,d=b)
 str(res)
+
+a <- timeManip(fromPeriod="2013060205",toPeriod="2013060605",timeResolution="daily",precision="hourly")
+b <- timeManip(fromPeriod="2013060308",toPeriod="2013060508",timeResolution="daily",precision="hourly")
+res <- indice_subdate(date=a,d=b)
+str(res)
+
 
 # object timeManip
 test1 <- timeManip(fromPeriod="2000090106",toPeriod="2014123106",timeResolution="daily")
