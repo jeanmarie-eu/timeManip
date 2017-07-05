@@ -1,7 +1,7 @@
 Package: timeManip
 Type: Package
 Version: 0.9
-Authors@R: person("Jean-Marie", "Lepioufle", , "jm@nexmodeling.com", c("aut","cre"))
+Authors@R: c(person("Jean-Marie", "Lepioufle", , "me@jeanmarie.eu", c("aut","cre")))
 Title: time data manipulation
 Description: Simple functions to quickly manipulate dates
   The package focuses on:
@@ -10,8 +10,8 @@ Description: Simple functions to quickly manipulate dates
   The package focuses on date variable as character and POSIXlt.
 Depends: R (>= 3.2.5)
 License: GPL-3
-URL: https://github.com/jeanmarielepioufle/timeManip
-BugReports: https://github.com/jeanmarielepioufle/timeManip/issues
+URL: https://github.com/jeanmarie-eu/timeManip
+BugReports: https://github.com/jeanmarie-eu/timeManip/issues
 Encoding: UTF-8
 LazyData: false
 RoxygenNote: 5.0.1
