@@ -8,7 +8,7 @@ Description: Simple functions to quickly manipulate dates
   i-quickly manipulating dates.
   ii-minimizing memory use. Build the date timeserie when needed
   The package focuses on date variable as character and POSIXlt.
-Depends: R (>= 3.2.5)
+Depends: R (>= 3.2.0)
 License: GPL-3
 URL: https://github.com/jeanmarie-eu/timeManip
 BugReports: https://github.com/jeanmarie-eu/timeManip/issues
