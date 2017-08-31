@@ -21,4 +21,3 @@ res <- insec(timeResolution="hourly",v=4)
 res <- insec(timeResolution="hourly",v=4,INV=TRUE)
 }
 \keyword{timeManip}
-

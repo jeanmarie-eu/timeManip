@@ -32,4 +32,3 @@ res <- timeserie("hourly",v=2,"1980022802","1980030102","hourly")
 head(res)
 }
 \keyword{timeManip}
-

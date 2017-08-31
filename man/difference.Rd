@@ -20,4 +20,3 @@ difference()
 }
 }
 \keyword{timeManip}
-

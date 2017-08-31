@@ -20,4 +20,3 @@ contain()
 }
 }
 \keyword{timeManip}
-

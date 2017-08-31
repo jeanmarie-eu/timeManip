@@ -20,4 +20,3 @@ res <- convertFormat(strptime("2016032701","\%Y\%m\%d\%H\%",tz="GMT"),"YY,MM,DD,
 res <- convertFormat(strptime("2016032701","\%Y\%m\%d\%H\%",tz="GMT"),"YYMMDDHH")
 }
 \keyword{timeManip}
-

@@ -29,4 +29,3 @@ res <- timeManip(fromPeriod="2013060205",toPeriod="2013060205",
 res$seqPeriod()
 }
 \keyword{timeManip}
-

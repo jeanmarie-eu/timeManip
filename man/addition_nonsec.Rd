@@ -22,4 +22,3 @@ addition_nonsec(date=res,"hourly",v=10)
 
 }
 \keyword{timeManip}
-

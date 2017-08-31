@@ -21,4 +21,3 @@ res <- YYYYmmddHH_chr()
 }
 }
 \keyword{timeManip}
-

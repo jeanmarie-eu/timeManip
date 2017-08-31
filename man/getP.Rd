@@ -21,4 +21,3 @@ res <- YYYYmmddHH_chr("2015010100")
 getP(res,"month")
 }
 \keyword{timeManip}
-

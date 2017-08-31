@@ -20,4 +20,3 @@ addition(date=res,sec=487654)
 
 }
 \keyword{timeManip}
-

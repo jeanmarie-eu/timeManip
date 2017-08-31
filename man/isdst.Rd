@@ -17,4 +17,3 @@ res <- YYYYmmddHH_chr("2015010100")
 isdst(res)
 }
 \keyword{timeManip}
-

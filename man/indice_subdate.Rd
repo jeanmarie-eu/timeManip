@@ -20,4 +20,3 @@ indice_subdate()
 }
 }
 \keyword{timeManip}
-

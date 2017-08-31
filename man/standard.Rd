@@ -22,4 +22,3 @@ res <- standard("hourly","2015010100")
 res <- standard("monthly","198002")
 }
 \keyword{timeManip}
-
