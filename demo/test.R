@@ -16,6 +16,20 @@ standard(precision="hourly", "2015010102")
 standard(precision="minute", "201501010224")
 standard(precision="second", "20150101022419")
 
+# or
+standard2(precision="yearly","2015")
+standard2(precision="monthly","2015/01")
+standard2(precision="monthly","2015/1")
+standard2(precision="daily",  "20150101")
+standard2(precision="daily",  "2015/1/1")
+standard2(precision="hourly", "2015/01/01 02")
+standard2(precision="hourly", "2015/1/1 2")
+standard2(precision="minute", "201501010224")
+standard2(precision="minute", "2015/1/1 2:24")
+standard2(precision="second", "20150101022419")
+standard2(precision="second", "2015/1/1 2:24:19")
+
+
 # create a POSIXlt timeserie
 tmp <- timeserie(timeResolution="hourly",fromPeriod="2015010102",toPeriod="2015010110")
 tmp <- timeserie("three-hourly","2015010102","2015010110")

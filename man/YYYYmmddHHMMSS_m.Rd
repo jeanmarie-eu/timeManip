@@ -17,4 +17,3 @@ res <- YYYYmmddHHMMSS_chr("20150101001034")
 YYYYmmddHHMMSS_m(res)
 }
 \keyword{timeManip}
-

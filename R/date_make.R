@@ -1,4 +1,133 @@
+#' standard2
+#'
+#' standard2
+#' @param precision choice between "daily","hourly","minute","second",...
+#' @param date_chr date in character as "2015/01/12 06:00"
+#' @return The output is a POSIXlt value
+#' @keywords timeManip
+#' @export
+#' @examples
+#' res <- standard2("hourly","2015/01/01 00")
+#' res <- standard2("monthly","1980/02")
+#' res <- standard2("monthly","1980/2/1 06:12")
 
+standard2 <- function(precision,date_chr){
+  date <- switch(precision,
+      "yearly"       = YYYY2_chr(date_chr=date_chr),
+      "monthly"      = YYYYmm2_chr(date_chr=date_chr),
+      "daily"        = YYYYmmdd2_chr(date_chr=date_chr),
+      "hourly"       = YYYYmmddHH2_chr(date_chr=date_chr),
+      "minute"       = YYYYmmddHHMM2_chr(date_chr=date_chr),
+      "second"       = YYYYmmddHHMMSS2_chr(date_chr=date_chr),
+      (stop(paste0("Invalid precision:", precision,"."))))
+  return(date)
+}
+
+
+#' YYYY2_chr
+#'
+#' YYYY2_chr
+#' @param date_chr date in character
+#' @return The output is a POSIXlt value
+#' @keywords timeManip
+#' @export
+#' @examples
+#' \dontrun{
+#' res <- YYYY2_chr()
+#' }
+YYYY2_chr <- function(date_chr){
+  return(char2POSIXlt2(char="YYYY",date_chr))
+}
+
+#' YYYYmm2_chr
+#'
+#' YYYYmm2_chr
+#' @param date_chr date in character
+#' @return The output is a POSIXlt value
+#' @keywords timeManip
+#' @export
+#' @examples
+#' \dontrun{
+#' res <- YYYYmm2_chr()
+#' }
+YYYYmm2_chr <- function(date_chr){
+  return(char2POSIXlt2(char="YYYYmm",date_chr))
+}
+
+#' YYYYmmdd2_chr
+#'
+#' YYYYmmdd2_chr
+#' @param date_chr date in character
+#' @return The output is a POSIXlt value
+#' @keywords timeManip
+#' @export
+#' @examples
+#' \dontrun{
+#' res <- YYYYmmdd2_chr()
+#' }
+YYYYmmdd2_chr <- function(date_chr){
+  return(char2POSIXlt2(char="YYYYmmdd",date_chr))
+}
+
+#' YYYYmmddHH2_chr
+#'
+#' YYYYmmddHH2_chr
+#' @param date_chr date in character
+#' @return The output is a POSIXlt value
+#' @keywords timeManip
+#' @export
+#' @examples
+#' \dontrun{
+#' res <- YYYYmmddHH2_chr()
+#' }
+YYYYmmddHH2_chr <- function(date_chr){
+  return(char2POSIXlt2(char="YYYYmmddHH",date_chr))
+}
+
+#' YYYYmmddHHMM2_chr
+#'
+#' YYYYmmddHHMM2_chr
+#' @param date_chr date in character
+#' @return The output is a POSIXlt value
+#' @keywords timeManip
+#' @export
+#' @examples
+#' \dontrun{
+#' res <- YYYYmmddHHMM2_chr()
+#' }
+YYYYmmddHHMM2_chr <- function(date_chr){
+  return(char2POSIXlt2(char="YYYYmmddHHMM",date_chr))
+}
+
+#' YYYYmmddHHMMSS2_chr
+#'
+#' YYYYmmddHHMMSS2_chr
+#' @param date_chr date in character
+#' @return The output is a POSIXlt value
+#' @keywords timeManip
+#' @export
+#' @examples
+#' \dontrun{
+#' res <- YYYYmmddHHMMSS2_chr()
+#' }
+YYYYmmddHHMMSS2_chr <- function(date_chr){
+  return(char2POSIXlt2(char="YYYYmmddHHMMSS",date_chr))
+}
+
+
+char2POSIXlt2 <- function(char,date_chr){
+  res <- switch(char,
+    "YYYY" = as.POSIXlt(strptime(paste0(date_chr,"/01/01"),"%Y/%m/%d",tz="GMT")),
+    "YYYYmm" = as.POSIXlt(strptime(paste0(date_chr,"/01"),"%Y/%m/%d",tz="GMT")),
+    "YYYYmmdd" = as.POSIXlt(strptime(paste0(date_chr," 00:00:00"),"%Y/%m/%d %H:%M:%S",tz="GMT")),
+    "YYYYmmddHH" = as.POSIXlt(strptime(paste0(date_chr,":00:00"),"%Y/%m/%d %H:%M:%S",tz="GMT")),
+    "YYYYmmddHHMM" = as.POSIXlt(strptime(paste0(date_chr,":00"),"%Y/%m/%d %H:%M:%S",tz="GMT")),
+    "YYYYmmddHHMMSS" = as.POSIXlt(strptime(date_chr,"%Y/%m/%d %H:%M:%S",tz="GMT")),
+    (message=paste0("Invalid char:", char,"."))
+   )
+   return(res)
+}
+#################################################################
 #' standard
 #'
 #' standard
@@ -20,10 +149,8 @@ standard <- function(precision,date_chr){
       "minute"       = YYYYmmddHHMM_chr(date_chr=date_chr),
       "second"       = YYYYmmddHHMMSS_chr(date_chr=date_chr),
       (stop(paste0("Invalid precision:", precision,"."))))
-
   return(date)
 }
-
 
 #' YYYY_chr
 #'
