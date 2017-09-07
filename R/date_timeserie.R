@@ -38,10 +38,10 @@ timeserie <- function(timeResolution,fromPeriod,toPeriod,precision=NULL,v=1){
     (stop(paste0("Invalid time resolution:", timeResolution,".")))
   )
 
-  nbStep <- length(seqPeriod)
-  if (seqPeriod[nbstep]<to_POSIXlt)  seqPeriod[nbstep] <- to_POSIXlt
-  if (seqPeriod[nbstep]>to_POSIXlt)  seqPeriod[nbstep] <- to_POSIXlt
+  nbStep=length(seqPeriod)
 
-  return(list(nbStep=nbStep,
-              seqPeriod=as.POSIXlt(seqPeriod)))
+  res <- list(nbStep=length(seqPeriod),
+              seqPeriod=as.POSIXlt(seqPeriod,tz = "GMT"))
+
+  return(res)
 }

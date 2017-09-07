@@ -32,7 +32,7 @@ standard2(precision="second", "2015/1/1 2:24:19")
 
 # create a POSIXlt timeserie
 tmp <- timeserie(timeResolution="hourly",fromPeriod="2015010102",toPeriod="2015010110")
-tmp <- timeserie("three-hourly","2015010102","2015010110")
+tmp <- timeserie(timeResolution="three-hourly","2015010102","2015010110")
 tmp <- timeserie("hourly",v=3,"2015010102","2015010110")
 tmp <- timeserie("daily","2015010102","2015011210")
 tmp <- timeserie("daily",v=2,"2015010102","2015011210")
