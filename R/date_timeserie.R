@@ -23,7 +23,7 @@ timeserie <- function(timeResolution,fromPeriod,toPeriod,precision=NULL,v=1){
   } else if(is.null(precision) && (timeResolution=="three-hourly")) {
     precision <- "hourly"
   }
-  
+
   from_POSIXlt <- standard(precision,fromPeriod)
   to_POSIXlt   <- standard(precision,toPeriod)
 
@@ -37,7 +37,10 @@ timeserie <- function(timeResolution,fromPeriod,toPeriod,precision=NULL,v=1){
     "second"       = seq(from = from_POSIXlt, to = to_POSIXlt, by = (v*1)),
     (stop(paste0("Invalid time resolution:", timeResolution,".")))
   )
+
   nbStep <- length(seqPeriod)
+  if (seqPeriod[nbstep]<to_POSIXlt)  seqPeriod[nbstep] <- to_POSIXlt
+  if (seqPeriod[nbstep]>to_POSIXlt)  seqPeriod[nbstep] <- to_POSIXlt
 
   return(list(nbStep=nbStep,
               seqPeriod=as.POSIXlt(seqPeriod)))
