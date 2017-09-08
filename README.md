@@ -1,6 +1,6 @@
 # timeManip
 
-[![Travis-CI Build Status](https://travis-ci.org/jeanmarielepioufle/timeManip.svg?branch=master)](https://travis-ci.org/jeanmarielepioufle/timeManip)
+[![Travis-CI Build Status](https://travis-ci.org/jeanmarie-eu/timeManip.svg?branch=master)](https://travis-ci.org/jeanmarie-eu/timeManip)
 
 The R-package gathers simple functions to quickly manipulate dates as character and POSIXlt
 The package focuses on:
@@ -13,7 +13,7 @@ The package focuses on:
 source("https://raw.githubusercontent.com/r-lib/remotes/master/install-github.R")$value("r-lib/remotes")
 library(remotes)
 
-remotes::install_github("jeanmarielepioufle/timeManip")
+remotes::install_github("jeanmarie-eu/timeManip")
 ```
 
 ## Usage
