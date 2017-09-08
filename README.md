@@ -10,8 +10,10 @@ The package focuses on:
 ## Installation
 
 ```R
-# install.packages("devtools")
-devtools::install_github("jeanmarielepioufle/timeManip")
+source("https://raw.githubusercontent.com/r-lib/remotes/master/install-github.R")$value("r-lib/remotes")
+library(remotes)
+
+remotes::install_github("jeanmarielepioufle/timeManip")
 ```
 
 ## Usage
