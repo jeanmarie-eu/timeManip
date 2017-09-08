@@ -1,3 +1,28 @@
+#' df2time
+#'
+#' df2time
+#' @param precision choice between "daily","hourly","minute","second",...
+#' @param df date.frame of the columns year, months,...
+#' @return The output is a POSIXlt value
+#' @keywords timeManip
+#' @export
+#' @examples
+#' df <- data.frame(year=rep(2015,5),month=c(1,2,3,4,5),day=c(1,1,1,1,1),hour=c(1,2,3,4,5))
+#' df2time(precision="hourly",df)
+
+
+df2time <- function(precision,df){
+  date <-switch(precision,
+    "yearly"  = standard2(precision=precision, as.character(df[,1])),
+    "monthly" = standard2(precision=precision, paste(as.character(df[,1]),as.character(df[,2]),sep="/")),
+    "daily"   = standard2(precision=precision, paste(as.character(df[,1]),as.character(df[,2]),as.character(df[,3]),sep="/")),
+    "hourly"  = standard2(precision=precision, paste(paste(as.character(df[,1]),as.character(df[,2]),as.character(df[,3]),sep="/"), as.character(df[,4]),sep=" ")),
+    "minute"  = standard2(precision=precision, paste(paste(paste(as.character(df[,1]),as.character(df[,2]),as.character(df[,3]),sep="/"), as.character(df[,4]),sep=" "),as.character(df[,5]),sep=":")),
+    "second"  = standard2(precision=precision, paste(paste(paste(paste(as.character(df[,1]),as.character(df[,2]),as.character(df[,3]),sep="/"), as.character(df[,4]),sep=" "),as.character(df[,5]),sep=":"),as.character(df[,6]),sep=":")),
+    stop("invalid precision: ", precision))
+  return(date)
+}
+
 #' standard2
 #'
 #' standard2

@@ -1,3 +1,8 @@
+# timeManip 0.91
+
+* create a function df2time() that create POSIXlt vector from a data.frame with date information
+* some new and potentially more accurate names for the files
+
 # timeManip 0.9
 
 * update POSIXlt2matrix functions: YYYY_m, ..., YYYYmmddHHMMSS_m
